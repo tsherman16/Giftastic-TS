@@ -9,22 +9,30 @@ function displayGifList() {
     var gifSearch = $(this).attr("data-name");
     var queryURL = "https://api.giphy.com/v1/gifs/search?q=" + gifSearch + "&api_key=aMYkZxZd9DJoNDCwF5t82p0OlpXqgtZ5&limit=10";
 
+    $("#gif-view").empty();
+
     $.ajax({
         url: queryURL,
         method: "GET"
     }).then(function (response) {
-        var newGifDiv = $("<div class = 'gif'>");
+        for (var i = 0; i < 10; i++) {
+            var newGifDiv = $("<div class = 'gif'>");
 
-        var gifURL = response.data.images.original_still.url;
-        var gifRating = response.data.rating;
-
-        var theGif = $("<img>").attr("src", gifURL);
-        var theRating = $("<p>").text("Rating: " + gifRating)
-
-        newGifDiv.append(theGif);
-        newGifDiv.append(theRating);
-
-        $("#gif-view").prepend(newGifDiv);
+            var gifURL = response.data[i].images.original_still.url;
+            var gifRating = response.data[i].rating;
+    
+            var theGif = $("<img>")
+                .attr("src", gifURL)
+                .attr("still", gifURL)
+                .attr("moving", response.data[i].images.original.url)
+                .addClass("gifImage");
+            var theRating = $("<p>").text("Rating: " + gifRating)
+    
+            newGifDiv.append(theGif);
+            newGifDiv.append(theRating);
+    
+            $("#gif-view").prepend(newGifDiv);
+        }
 
     })
 }
@@ -43,17 +51,26 @@ function gifButtons() {
 }
 
 //this is for once inputting text to then run the functions (create buttons, display gifs, etc.)
-$("#add-gif").on("click", function (event) {
+$(document).on("click", "#add-gif", function (event) {
     event.preventDefault();
 
-    var gifInput = $("gif-input").val().trim()
+    var gifInput = $("#gif-input").val().trim()
 
     topics.push(gifInput);
 
     gifButtons();
 })
 
-$(document).on("click", "gif-btn", displayGifList);
+$(document).on("click", ".gif-btn", displayGifList);
+
+$(document).on("click", ".gifImage", function() {
+    var $img = $(this);
+    if ($img.attr("src").includes("_s")) {
+        $img.attr("src", $img.attr("moving"));
+    } else {
+        $img.attr("src", $img.attr("still"));
+    }
+});
 
 gifButtons();
 
