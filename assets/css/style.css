@@ -1,0 +1,64 @@
+.jumbotron{
+    background-color: #418FDE;
+}
+
+.mainTitle {
+    text-align: center;
+    font-family: 'Barriecito', "Times New Roman", cursive;
+    font-size: 100px;
+}
+
+.search-btn-color {
+    background-color: #C8102E;
+    color: white;
+    font-family: 'Indie Flower', "Times New Roman", cursive;
+    font-size: 20px;
+}
+
+body {
+    background-color: #C8102E;
+}
+.gif-btn-color {
+    background-color: #418FDE;
+    color: white;
+    margin-right: 10px;
+    font-family: 'Indie Flower', "Times New Roman", cursive;
+}
+
+#gif-form {
+    margin-top: 40px;
+}
+
+#gif-input {
+    width: 87%;
+    margin-left: 17px;
+}
+
+#gif-search-title {
+    font-family: 'Indie Flower', "Times New Roman", cursive;
+    font-size: 23px;
+    color: white;
+}
+
+#add-gif {
+    width: 100%;
+    margin-top: 20px;
+}
+
+.gifImage {
+    width: 250px;
+    height: 200px;
+    margin-top: 20px;
+    margin-right: 20px;
+    margin-left: 20px;
+    float: left;
+}
+
+p {
+    margin-top: 20px;
+    margin-right: 20px;
+    margin-left: 20px;
+    text-align: Center;
+    color: white;
+}
+

@@ -1,3 +1,6 @@
+
+$(document).ready(function(){
+
 //variables======================================================================
 
 var topics = ["Football", "Basketball", "Soccer", "Gym Fail", "Movies", "Madden", "Hip hop", "South Park", "Dogs", "Cats", "Safari"]
@@ -44,6 +47,7 @@ function gifButtons() {
     for (var i = 0; i < topics.length; i++) {
         var g = $("<button>");
         g.addClass("gif-btn");
+        g.addClass("btn gif-btn-color border border-white")
         g.attr("data-name", topics[i]);
         g.text(topics[i]);
         $("#buttons-view").append(g);
@@ -74,3 +78,4 @@ $(document).on("click", ".gifImage", function() {
 
 gifButtons();
 
+})

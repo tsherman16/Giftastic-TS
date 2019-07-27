@@ -7,25 +7,36 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Indie+Flower&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Barriecito&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="assets/css/style.css">
     <title>Best Gifs In Town</title>
 </head>
 
-<body>
+<body class="backgroundMain">
+
+    <div class="jumbotron">
+        <h1 class="display-4 mainTitle">Best Gifs in Town!</h1>
+        <hr class="my-4">
+
+        <div id="gif-form">
+            <div class="container">
+                <label for="gif-input" id = "gif-search-title">Find your gif!</label>
+                <input type="text" id="gif-input"><br>
+
+                <input class=" btn search-btn-color border border-white" id="add-gif" type="submit" value="Search">
+            </div>
+        </div>
+    </div>
 
     <div class="container">
         <div class="row">
-            <div id="buttons-view"></div>
+            <div class="col">
+                <div id="buttons-view"></div>
+            </div>
         </div>
 
         <div class="row">
-            <form id="gif-form">
-                <label for="gif-input">Find your gif!</label>
-                <input type="text" id="gif-input"><br>
-
-                <input id="add-gif" type="submit" value="Find your gif!">
-            </form>
-
             <div id="gif-view"></div>
         </div>
     </div>
