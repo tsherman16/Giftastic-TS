@@ -10,7 +10,7 @@ var topics = ["Football", "Basketball", "Soccer", "Gym Fail", "Movies", "Madden"
 //function calling for the gifs then displaying the gifs and ratings on the page
 function displayGifList() {
     var gifSearch = $(this).attr("data-name");
-    var queryURL = "https://api.giphy.com/v1/gifs/search?q=" + gifSearch + "&api_key=aMYkZxZd9DJoNDCwF5t82p0OlpXqgtZ5&limit=10";
+    var queryURL = "https://api.giphy.com/v1/gifs/search?q=" + gifSearch + "&api_key=aMYkZxZd9DJoNDCwF5t82p0OlpXqgtZ5";
 
     $("#gif-view").empty();
 
