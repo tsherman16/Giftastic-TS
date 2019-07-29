@@ -62,5 +62,11 @@ p {
     margin-left: 20px;
     text-align: Center;
     color: white;
+    font-family: 'Indie Flower', "Times New Roman", cursive;
+}
+
+#addMore {
+    margin-bottom: 20px;
+    width: 100%;
 }
 
